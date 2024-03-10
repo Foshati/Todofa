@@ -5,8 +5,8 @@
 The first thing to do is to clone the repository:
 
 ```sh
-$ git clone https://github.com/Foshati/Signalfa.git
-$ cd Signalfa
+$[ git clone https://github.com/Foshati/Todofa.git
+$ cd Todofa
 ```
 
 Create a virtual environment to install dependencies in and activate it:
