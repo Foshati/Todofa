@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="توصیف کوتاه محتوای صفحه" />
+    <meta name="keywords" content="کلمات, کلیدی, مرتبط, با, صفحه" />
+    <!-- افزودن تگ متا کلمات کلیدی -->
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-800">
+    {% include "nav.html" %}
+    <div class="p-8 mt-6 bg-blue-300">
+      {% block content %}
+      {% endblock content %}
+      {% include "messages.html" %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+<div class="flex items-center justify-center">
+  <form
+    method="post"
+    action=""
+    class="flex flex-col gap-6 w-3/5 p-4 bg-[#075985] shadow-md rounded-lg"
+    novalidate
+  >
+    {% csrf_token %} {{ form }}
+    <input
+      class="bg-[#f59e0b] px-4 py-2 rounded-full hover:bg-blue-800"
+      type="submit"
+      value="Send"
+    />
+  </form>
+</div>
+{% endblock content %}

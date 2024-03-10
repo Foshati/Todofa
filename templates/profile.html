@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    profile
+{% endblock title %}
+<!--#tag & filter-->
+{% block content %}
+    <div>
+        <img class="rounded-full p-4"
+             src="{% static 'Blog/images/profile.png' %}"
+             width="150"
+             height="150"
+             alt="loading...">
+    </div>
+    {% if name == 'admin' %}
+        <p>welcom admin</p>
+    {% else %}
+        <p>Username: {{ request.user }}</p>
+        <p>Email: {{ request.user.email }}</p>
+        <p>First Name: {{ request.user.first_name }}</p>
+
+
+
+
+
+
+
+
+        
+
+        
+        <p>Last Name: {{ request.user.last_name }}</p>
+    {% endif %}
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicinque. Rem, nemo soluta.</h2>
+    <br />
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus officiis, facilis necessitatibus alias excepturi veniam placeat numquam ut fugit. Aliquid enim sit earum veniam! Cum, itaque eaque. Rem, nemo soluta.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus officiis, facilis necessitatibus alias excepturi veniam placeat numquam ut fugit. Aliquid enim sit earum veniam! Cum, itaque eaque. Rem, nemo soluta.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus officiis, facilis necessitatibus alias excepturi veniam placeat numquam ut fugit. Aliquid enim sit earum veniam! Cum, itaque eaque. Rem, nemo soluta.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus officiis, facilis necessitatibus alias excepturi veniam placeat numquam ut fugit. Aliquid enim sit earum veniam! Cum, itaque eaque. Rem, nemo soluta.
+    </p>
+{% endblock content %}

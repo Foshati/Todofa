@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="توصیف کوتاه محتوای صفحه" />
+    <meta name="keywords" content="کلمات, کلیدی, مرتبط, با, صفحه" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <!-- افزودن تگ متا کلمات کلیدی -->
+    <title>Document</title>
+  </head>
+  <body>
+    <div class= "flex justify-between p-7 gap-10 bg-slate-600">
+      <div class="flex items-center gap-6">
+        <img class=" rounded-full"
+             src="{% static 'Blog/images/logo.jpg' %}"
+             width="50"
+             height="50"
+             alt="loading...">
+        <ul class="flex  gap-6">
+          <li>
+            <a href="{% url 'home' %}"
+               class="hover:text-blue-800 hover:font-bold transition-all duration-300">Home</a>
+          </li>
+          <li>
+            <a href="{% url 'forms' %}"
+               class="hover:text-blue-800 hover:font-bold transition-all duration-300">TodoForm</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        {#        {% if user.is_authenticated #}
+        {% if request.user.is_authenticated %}
+          <div class="flex gap-4">
+            <p>welcom {{ request.user }}</p>
+            <a href="{% url 'profile' %}"
+               class="hover:text-blue-800 hover:font-bold transition-all duration-300">profile</a>
+            <a href="{% url 'accounts:user_logout' %}"
+               class="hover:text-red-700 hover:font-bold transition-all duration-300">logout</a>
+          </div>
+        {% else %}
+          <a href="{% url 'accounts:user_register' %}"
+             class="hover:text-green-700 hover:font-bold transition-all duration-300">register /</a>
+          <a href="{% url 'accounts:user_login' %}"
+             class="hover:text-green-800 hover:font-bold transition-all duration-300">login</a>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
