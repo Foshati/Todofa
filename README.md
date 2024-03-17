@@ -12,7 +12,7 @@ $ cd Todofa
 Create a virtual environment to install dependencies in and activate it:
 
 ```sh
-python ==3.11
+python ==3.12
 $ python3 -m venv venv
 $ source venv/bin/activate    
 ```
