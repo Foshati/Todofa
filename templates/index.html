@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  home
+{% endblock %}
+{% block content %}
+  <div class="flex">
+    <div class="flex flex-col w-3/5">
+      {% for todo in todo1 %}
+        <div class="flex justify-between bg-white rounded-lg shadow-md p-4 mb-4">
+          <div>
+            <a href="{% url 'details' todo.id %}" class="text-xl font-semibold hover:text-yellow-700">{{ todo.title }}</a>
+            <p class="text-gray-500">{{ todo.body }}</p>
+            <p class="text-gray-400">{{ todo.create }}</p>
+          </div>
+          <div>
+            <a href="{% url 'delete' todo.id %}" class="bg-red-400 px-4 py-2 rounded-full mt-8 hover hover:bg-red-500 text-bold">delete</a>
+            <a href="{% url 'update' todo.id %}" class="bg-green-400 px-4 py-2 rounded-full mt-8 hover hover:bg-green-500 text-bold">Edit</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="ml-16">
+      <img src="{% static 'Blog/images/Todo_img1.png' %}" width="300" height="300" alt="loading..." />
+    </div>
+  </div>
+{% endblock %}
